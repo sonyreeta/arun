@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <table id="about" border="0" width="100%" 
+        cellpadding="0" cellspacing="0" bgcolor =" #080710">
+        <tr>
+            <td>
+                <table border="8" cellpadding="15" 
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center" 
+                            valign="middle" colspan="2">
+                            <font face="Verdana" size="7" 
+                                color=" #080710">
+                                
+                            </font>
+                            <hr color=" #080710" width="90">
+                        </td>
+                    </tr>
+                    <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel='stylesheet' href='{% static "style.css" %}'>
+    
+</head>
+{% block body %} 
+    <nav class="navbar background">
+        <div class="logo">
+            <img src="first_prj/static/images" style="height: 50px;" alt="Logo" >
+        </div>
+        <ul class="nav-list" cellpadding="7" cellspacing="8"  >
+            
+            <li><a href="#Residential"> Residential Projects</a></li>
+            <li><a href="#Commercial">Commercial Projects</a></li>
+            <li><a href="#Mixed">Mixed-Use Projects</a></li>
+            <li><a href="#Mixed">Live-Work-Play Communities</a></li> 
+        </ul>
+    </nav>
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-medium " id="Residential">Residential Projects
+                </h1>
+                <p class="text-small">
+                  Residential construction describes structures built for habitation.  
+                  This category can be broken down further into single-family ,
+                  and multi-family construction.
+                  But even then, “multi-family” is often too broad a category,
+                  to adequately describe a project’s needs and considerations. 
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="secondsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Commercial">
+                  Commercial Projects
+                </h1>
+                <p class="text-small">
+                  Compared to residential construction,
+                  commercial projects are exponentially more complex.
+                  Commercial developers and designers must consider a vast array of needs –
+                  including function, safety, environment, energy efficiency, and accessibility, to name a few. 
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="paras">
+            <h1 class="sectionTag text-big">Mixed projects</h1>
+            <p class="sectionSubTag text-small">
+              Mixed-use construction projects combine multiple types of construction ,
+              and land use within a single development or area. 
+              Mixed-use developments are designed to create more efficient ,
+              and integrated communities by providing a variety of functions in close proximity to each other. 
+              They often include a mix of residential and commercial units, recreational facilities, green space, 
+              and public amenities to create vibrant, convenient urban or suburban environments. 
+            </p>
+        </div>
+    </section>
+<br>
+    <footer class="background">
+        <p class="text-footer">
+            THANK YOU 
+        </p>
+    </footer>
+    {% endblock body %}
+
+</html>

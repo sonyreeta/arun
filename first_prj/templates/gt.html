@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="UTF-8">
+      <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta content="" name="description">
+      <meta content="" name="author">
+      <meta name="keywords" content=""/>
+      <!-- Favicon -->
+      <link rel="icon" href="/media/assets/images/brand/favicon.png" type="image/x-icon"/>
+      <!-- Title -->
+      <title>Course Management</title>
+      <!--Bootstrap.min css-->
+      <link rel="stylesheet" href="/media/assets/css/bootstrap.min.css">
+      <!-- Dashboard css -->
+      <link href="/media/assets/css/style.css" rel="stylesheet" />
+      <!-- Custom scroll bar css-->
+      <link href="/media/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+      <!-- Horizontal-menu css -->
+      <link href="/media/assets/css/fade-down.css" rel="stylesheet">
+      <link href="/media/assets/css/horizontalmenu.css" rel="stylesheet">
+      <!--Daterangepicker css-->
+      <link href="/media/assets/css/daterangepicker.css" rel="stylesheet" />
+      <!-- Rightsidebar css -->
+      <link href="/media/assets/css/sidebar.css" rel="stylesheet">
+      <!-- Sidebar Accordions css -->
+      <link href="/media/assets/css/easy-responsive-tabs.css" rel="stylesheet">
+      <!-- Owl Theme css-->
+      <link href="/media/assets/css/owl.carousel.css" rel="stylesheet">
+      <!-- Morris  Charts css-->
+      <link href="/media/assets/css/morris.css" rel="stylesheet" />
+      <!---Font icons css-->
+      <link href="/media/assets/css/plugin.css" rel="stylesheet" />
+      <link href="/media/assets/css/icons.css" rel="stylesheet" />
+      <link  href="/media/assets/fonts/fonts/font-awesome.min.css" rel="stylesheet">
+      <link href="/media/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+   </head>
+   <body class="app sidebar-mini rtl">
+      <!--Global-Loader-->
+      <div id="global-loader">
+         <img src="/media/assets/images/icons/loader.svg" alt="loader">
+      </div>
+      <div class="page">
+         <div class="page-main">
+            <!--app-header-->
+            <div class="app-header header hor-topheader d-flex">
+               <div class="container">
+                  <div class="d-flex">
+                     <a class="header-brand" href="index.html">
+                     <img src="/media/assets/images/brand/logo.png" class="header-brand-img main-logo" alt="atfolks">
+                     <img src="/media/assets/images/brand/icon.png" class="header-brand-img icon-logo" alt="atfolks">
+                     </a><!-- logo-->
+                     <a id="horizontal-navtoggle" class="animated-arrow hor-toggle"><span></span></a>
+                    
+                     <div class="d-flex order-lg-2 ml-auto header-rightmenu">
+                        <div class="dropdown">
+                           <a  class="nav-link icon full-screen-link" id="fullscreen-button">
+                           <i class="fe fe-maximize-2"></i>
+                           </a>
+                        </div>
+                        <!-- full-screen -->
+                        <div class="dropdown header-notify">
+                           <a class="nav-link icon" data-toggle="dropdown" aria-expanded="false">
+                           <i class="fe fe-bell "></i>
+                           <span class="pulse bg-success"></span>
+                           </a>
+                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
+                              <a href="#" class="dropdown-item text-center">4 New Notifications</a>
+                              <div class="dropdown-divider"></div>
+                              <a href="#" class="dropdown-item d-flex pb-3">
+                                 <div class="notifyimg bg-green">
+                                    <i class="fe fe-bell"></i>
+                                 </div>
+                                 <div>
+                                    <strong>Notifications 1</strong>
+                                    <div class="small text-muted">12 mins ago</div>
+                                 </div>
+                              </a>
+                              <a href="#" class="dropdown-item d-flex pb-3">
+                                 <div class="notifyimg bg-pink">
+                                    <i class="fe fe-bell"></i>
+                                 </div>
+                                 <div>
+                                    <strong>Notifications 2</strong>
+                                    <div class="small text-muted">2  hour ago</div>
+                                 </div>
+                              </a>
+                              <a href="#" class="dropdown-item d-flex pb-3">
+                                 <div class="notifyimg bg-blue">
+                                    <i class="fe fe-bell"></i>
+                                 </div>
+                                 <div>
+                                    <strong> Notifications 3</strong>
+                                    <div class="small text-muted">1  hour ago</div>
+                                 </div>
+                              </a>
+                              <a href="#" class="dropdown-item d-flex pb-3">
+                                 <div class="notifyimg bg-orange">
+                                    <i class="fe fe-bell"></i>
+                                 </div>
+                                 <div>
+                                    <strong>Notifications 4</strong>
+                                    <div class="small text-muted">2  days ago</div>
+                                 </div>
+                              </a>
+                              <div class="dropdown-divider"></div>
+                              <a href="notification.html" class="dropdown-item text-center">View all Notifications</a>
+                           </div>
+                        </div>
+                        <!-- notifications -->
+                        <div class="dropdown header-user">
+                            <a class="nav-link leading-none siderbar-link" data-toggle="sidebar-right" data-target=".sidebar-right">
+                                <span class="mr-3 d-none d-lg-block">
+                                    <span class="text-gray-white"><span class="ml-2">{{ user.first_name }} {{ user.last_name }}</span></span>
+                                </span>
+                                {% if user.image %}
+                                    <span class="avatar avatar-md brround"><img src="{{ user.image.url }}" alt="Profile-img" class="avatar avatar-md brround"></span>
+                                {% else %}
+                                    <span class="avatar avatar-md brround"><img src="/media/assets/images/users/default.png" alt="Profile-img" class="avatar avatar-md brround"></span>
+                                {% endif %}
+                            </a>
+                        </div>
+                        <!-- profile -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--app-header end-->
+            <!-- Horizontal-menu -->
+            <div class="horizontal-main hor-menu clearfix">
+               <div class="horizontal-mainwrapper container clearfix">
+                  <nav class="horizontalMenu clearfix">
+                     <ul class="horizontalMenu-list">
+                        <li aria-haspopup="true"><a href="{% url 'dashboard' %}" class=""><i class="typcn typcn-device-desktop"></i> Dashboard </a></li>
+                        <li aria-haspopup="true"><a href="{% url 'course_list' %}" class=""><i class="typcn typcn-arrow-move-outline"></i> Course Management</a></li> 
+                        <li aria-haspopup="true"><a href="{% url 'usermanagement' %}" class=""><i class="typcn typcn-arrow-move-outline"></i> User Management</a></li> 
+						 <li aria-haspopup="true"><a href="{% url 'transaction' %}" class="sub-icon active"><i class="typcn typcn-arrow-move-outline"></i> Transaction</a></li> 
+                     </ul>
+                  </nav>
+                  <!--Nav end -->
+               </div>
+            </div>
+            <!-- Horizontal-menu end -->
+         
+            <!-- app-content-->
+            <div class="container content-area">
+               <div class="side-app">
+                  <!-- page-header -->
+                  <div class="page-header">
+                     <ol class="breadcrumb">
+                        <!-- breadcrumb -->
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}" >Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Transaction</li>
+                     </ol>
+                     <!-- End breadcrumb -->
+                    <div class="ml-auto">
+                        <div class="input-group">
+                        	
+                        	{% comment %} <a href="{% url 'course_add' %}" class="btn btn-primary text-white">
+                        		<span>
+                        			<i class="ti-plus"></i> Add Course
+                        		</span>
+                        	</a> {% endcomment %}
+                        </div>
+                        </div>
+                  </div>
+                  <!-- End page-header -->
+                
+                  <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="card">
+                             <div class="card-header">
+                                <div class="card-title">Under Construction.......</div>
+                            </div> 
+                            {% comment %} <div class="card-body">
+                                <div class="table-responsive">
+
+                                </div>
+                            </div> {% endcomment %}
+                            <!-- table-wrapper -->
+                        </div> 
+                        <!-- section-wrapper -->
+                    </div>
+                </div>
+               </div>
+               <!--End side app-->
+               <!-- Right-sidebar-->
+               <div class="sidebar sidebar-right sidebar-animate">
+                  <div class="tab-menu-heading siderbar-tabs border-0">
+                     <div class="tabs-menu text-center">
+					 Admin Panel
+                        <!-- Tabs -->
+                      <!--   <ul class="nav panel-tabs">
+                           <li class=""><a href="#tab"  class="active" data-toggle="tab">Admin Panel</a></li>
+                        </ul> -->
+                     </div>
+                  </div>
+                  <div class="panel-body tabs-menu-body side-tab-body p-0 border-0 ">
+                     <div class="tab-content border-top">
+                        <div class="tab-pane active " id="tab">
+                           <div class="card-body p-0">
+                            <div class="header-user text-center mt-4 pb-4">
+                                <!-- Display user profile image -->
+                                <span class="avatar avatar-xxl brround">
+                                    {% if user.image %}
+                                        <img src="{{ user.image.url }}" alt="Profile-img" class="avatar avatar-xxl brround">
+                                    {% else %}
+                                        <img src="/media/assets/images/users/default.png" alt="Profile-img" class="avatar avatar-xxl brround">
+                                    {% endif %}
+                                </span>
+                                <!-- Display user name -->
+                                <div class="dropdown-item text-center font-weight-semibold user h3 mb-0">
+                                    {{ user.first_name }} {{ user.last_name }}
+                                </div>
+                                <!-- Optional additional information -->
+                                <!-- <small>Web Designer</small> -->
+                            </div>
+                              <div class="card-body border-top">
+                                 <div class="row">
+                                     
+                                    <div class="col-4 text-center">
+                                       <a class="" href=""><i class="dropdown-icon mdi mdi-tune fs-30 m-0 leading-tight"></i></a>
+                                       <div>Settings</div>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <a class="" href="{% url 'logout' %}">
+                                            <i class="dropdown-icon mdi mdi-logout-variant fs-30 m-0 leading-tight"></i>
+                                        </a>
+                                        <div>Sign out</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- End Rightsidebar-->
+               <!--footer-->
+               <footer class="footer">
+                  <div class="container">
+                     <div class="row align-items-center flex-row-reverse">
+                        <div class="col-lg-12 col-sm-12   text-center">
+                           Copyright © 2024 atfolks All rights reserved.
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+               <!-- End Footer-->
+            </div>
+            <!-- End app-content-->
+         </div>
+      </div>
+      <!-- End Page -->
+      <!-- Back to top -->
+      <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+      <!-- Jquery js-->
+      <script src="/media/assets/js/jquery-3.2.1.min.js"></script>
+      <!--Bootstrap.min js-->
+      <script src="/media/assets/js/popper.min.js"></script>
+      <script src="/media/assets/js/bootstrap.min.js"></script>
+      <!--Jquery Sparkline js-->
+      <script src="/media/assets/js/jquery.sparkline.min.js"></script>
+      <!-- Chart Circle js-->
+      <script src="/media/assets/js/circle-progress.min.js"></script>
+      <!-- Star Rating js-->
+      <script src="/media/assets/js/jquery.rating-stars.js"></script>
+      <!--Moment js-->
+      <script src="/media/assets/js/moment.min.js"></script>
+      <!-- Daterangepicker js-->
+      <script src="/media/assets/js/daterangepicker.js"></script>
+      <!-- Horizontal-menu js -->
+      <script src="/media/assets/js/horizontalmenu.js"></script>
+      <!-- Sidebar Accordions js -->
+      <script src="/media/assets/js/easyResponsiveTabs.js"></script>
+      <!-- Custom scroll bar js-->
+      <script src="/media/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <!--Owl Carousel js -->
+      <script src="/media/assets/js/owl.carousel.js"></script>
+      <script src="/media/assets/js/owl-main.js"></script>
+      <!-- Rightsidebar js -->
+      <script src="/media/assets/js/sidebar.js"></script>
+      <!-- Charts js-->
+      <script src="/media/assets/js/chart.bundle.js"></script>
+      <script src="/media/assets/js/utils.js"></script>
+      <!--Time Counter js-->
+      <script src="/media/assets/js/jquery.missofis-countdown.js"></script>
+      <script src="/media/assets/js/counter.js"></script>
+      <!--Morris  Charts js-->
+      <script src="/media/assets/js/raphael-min.js"></script>
+      <script src="/media/assets/js/morris.js"></script>
+      <!-- Custom-charts js-->
+      <script src="/media/assets/js/index1.js"></script>
+      <!-- Data tables js-->
+      <script src="/media/assets/js/jquery.dataTables.min.js"></script>
+      <script src="/media/assets/js/dataTables.bootstrap4.min.js"></script>
+      <script src="/media/assets/js/datatable.js"></script>
+      <!-- Custom js-->
+      <script src="/media/assets/js/custom.js"></script>
+   </body>
+</html

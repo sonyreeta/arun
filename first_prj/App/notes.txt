@@ -1,0 +1,100 @@
+CSRF :makes the end-user perform unwanted actions ,
+within a web application that has already granted them authentication.
+
+-----------------------------------------------------
+<!---Try transmitting the token to the client within a hidden HTML form field, using the POST method.
+             This way the token will be included as a request parameter when the form is submitted-->
+
+
+
+
+{% block content %}
+<h1> CONTACT </h1>
+
+{% for item in all %}
+
+<strong> {{ item.Name }}</strong><br/>
+<li> Email: {{ item.Email }} <br/> </li>
+<li> Address: {{ item.Address}} <BR/></li>
+<li>  City : {{ item.City  }} <br/> </li>
+<li> State : {{ item.State  }} <br/> </li>
+<li>  Pincode : {{ item.Pincode }} <br/> </li>
+<br/>
+<hr/>
+{%endfor %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+  </head>
+<body>
+ <div class="row justify-content-center"> 
+    <div class="col-sm-5"> 
+      <div class="container">
+        
+          <form method="POST" action="{% url 'contact_save' %}">
+          {% csrf_token %} 
+          {{ form.as_p}}
+          <div class="row">
+               <div class="col-100 cellpadding= center:"100">
+               <h4>CONTACT FORM</h4><br>
+               <li>
+               <label for="Name"><i class="fa fa-user center"></i> Full Name :</label>
+               <input type="text" id="Name" name="Name" placeholder="Enter ur Name">
+               </li><br>
+               <li>
+               <label for="Email"><i class="fa fa-envelope"></i> Email  :</label>
+               <input type="text" id="Email" name="Email" placeholder="@example.com">
+               </li><br>
+               <li>
+               <label for="Id"><i class="fa fa-address-card-o"></i> Id :</label>
+               <input type="text" id="Id" name="Id" placeholder="Id_Num ">
+               </li><br>
+               <li>
+
+              <label for="Phone_num"><i class="fa fa-address-card-o"></i> Phone_num :</label>
+               <input type="integer" id="Phone_num" name="Phone_num" placeholder="Phone_num">
+               </li><br>
+               <li>
+               
+               
+
+                <button type="button" class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                  SUBMIT
+                </button>
+               
+                 
+              </div>
+            </div>
+          </body>
+
+
+  
+
+
+
+
+'''
+class ContactModel(models.Model):
+    Name       =models.CharField(max_length=100, blank=True,null=True)
+    Email      =models.EmailField(blank=True)   
+    Id         =models.IntegerField(blank=True)
+    
+
+    def __str__(self):
+        return self.Name'''
